@@ -7,6 +7,7 @@ import ProjectsSection from "./sections/ProjectsSection";
 import SkillsSection from "./sections/SkillsSection";
 import { portfolioData } from "@/data/portfolio";
 import Folder from "./Folder";
+import SplitText from "./SplitText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,9 +78,11 @@ export default function PortfolioContent() {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-20">
                     {/* Intro Paragraph */}
                     <div className="order-2 lg:order-1">
-                        <p className="text-lg lg:text-xl text-gray-800 dark:text-gray-300 leading-relaxed">
-                            {portfolioData.intro}
-                        </p>
+                        <SplitText
+                            text={portfolioData.intro}
+                            className="text-lg lg:text-xl font-bold text-gray-800 dark:text-gray-300 leading-relaxed"
+                            delay={0.3}
+                        />
                     </div>
 
                     {/* Single Folder with 3 Papers */}
@@ -88,15 +91,27 @@ export default function PortfolioContent() {
                             color="#5227FF"
                             size={1.5}
                             items={[
-                                <div key="about" className="flex items-center justify-center h-full text-xs font-bold text-purple-600">
+                                <button
+                                    key="about"
+                                    onClick={() => document.getElementById('education')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                                    className="flex items-center justify-center h-full text-xs font-bold text-purple-600 w-full cursor-pointer hover:scale-110 transition-transform"
+                                >
                                     About
-                                </div>,
-                                <div key="projects" className="flex items-center justify-center h-full text-xs font-bold text-orange-600">
+                                </button>,
+                                <button
+                                    key="projects"
+                                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                                    className="flex items-center justify-center h-full text-xs font-bold text-orange-600 w-full cursor-pointer hover:scale-110 transition-transform"
+                                >
                                     Projects
-                                </div>,
-                                <div key="skills" className="flex items-center justify-center h-full text-xs font-bold text-cyan-600 ">
+                                </button>,
+                                <button
+                                    key="skills"
+                                    onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                                    className="flex items-center justify-center h-full text-xs font-bold text-cyan-600 w-full cursor-pointer hover:scale-110 transition-transform"
+                                >
                                     Skills
-                                </div>,
+                                </button>,
                             ]}
                         />
                     </div>
@@ -105,17 +120,17 @@ export default function PortfolioContent() {
                 {/* Scrollable Content Sections */}
                 <div className="space-y-32 max-w-4xl mx-auto">
                     {/* About Section */}
-                    <div ref={(el) => { if (el) sectionsRef.current[0] = el; }}>
+                    <div id="education" ref={(el) => { if (el) sectionsRef.current[0] = el; }}>
                         <AboutSection />
                     </div>
 
                     {/* Projects Section */}
-                    <div ref={(el) => { if (el) sectionsRef.current[1] = el; }}>
+                    <div id="projects" ref={(el) => { if (el) sectionsRef.current[1] = el; }}>
                         <ProjectsSection />
                     </div>
 
                     {/* Skills Section */}
-                    <div ref={(el) => { if (el) sectionsRef.current[2] = el; }}>
+                    <div id="skills" ref={(el) => { if (el) sectionsRef.current[2] = el; }}>
                         <SkillsSection />
                     </div>
                 </div>

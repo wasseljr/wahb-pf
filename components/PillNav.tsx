@@ -277,6 +277,13 @@ const PillNav: React.FC<PillNavProps> = ({
             href={items?.[0]?.href || '#'}
             aria-label="Home"
             onMouseEnter={handleLogoEnter}
+            onClick={(e) => {
+              const href = items?.[0]?.href || '#';
+              if (href.startsWith('#')) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
             ref={el => {
               logoRef.current = el;
             }}
@@ -381,6 +388,18 @@ const PillNav: React.FC<PillNavProps> = ({
                       aria-label={item.ariaLabel || item.label}
                       onMouseEnter={() => handleEnter(i)}
                       onMouseLeave={() => handleLeave(i)}
+                      onClick={(e) => {
+                        if (item.href.startsWith('#')) {
+                          e.preventDefault();
+                          const targetId = item.href.slice(1);
+                          if (targetId === 'top') {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          } else {
+                            const element = document.getElementById(targetId);
+                            element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        }
+                      }}
                     >
                       {PillContent}
                     </a>
@@ -460,7 +479,19 @@ const PillNav: React.FC<PillNavProps> = ({
                     style={defaultStyle}
                     onMouseEnter={hoverIn}
                     onMouseLeave={hoverOut}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      setIsMobileMenuOpen(false);
+                      if (item.href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = item.href.slice(1);
+                        if (targetId === 'top') {
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        } else {
+                          const element = document.getElementById(targetId);
+                          element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }
+                    }}
                   >
                     {item.label}
                   </a>

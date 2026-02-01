@@ -33,25 +33,28 @@ export default function Home() {
       <PillNav
         logo="/Face.svg"
         items={[
-          { label: 'Home', href: '/' },
-          { label: 'About', href: '/about' },
-          { label: 'Projects', href: '/projects' },
-          { label: 'Contact', href: '/contact' }
+          { label: 'Home', href: '#top' },
+          { label: 'About', href: '#education' },
+          { label: 'Projects', href: '#projects' },
+          { label: 'Contact', href: '#contact' }
         ]}
       />
       <ThemeToggle />
 
       {/* Main Content */}
       <PortfolioContent />
-      <FlowingMenu
 
-        items={[
-          { link: 'https://linkedin.com/in/yourprofile', text: 'LinkedIn', image: '/linkedin-icon.svg' },
-          { link: 'https://instagram.com/yourprofile', text: 'Instagram', image: '/instagram-icon.svg' },
-          { link: 'tel:+1234567890', text: 'Phone', image: '/phone-icon.svg' },
-          { link: 'mailto:your.email@example.com', text: 'Email', image: '/email-icon.svg' }
-        ]}
-      />
+      {/* Contact Section - FlowingMenu */}
+      <div id="contact">
+        <FlowingMenu
+          items={[
+            { link: 'https://www.linkedin.com/in/wahb-menasria-3b9573274/', text: 'LinkedIn', image: '/linkedin.svg' },
+            { link: 'https://www.instagram.com/menasria22/', text: 'Instagram', image: '/Instagram.svg' },
+            { link: 'tel:+213782131668', text: 'Phone', image: '/Call.svg' },
+            { link: 'mailto:menasriawahb@gmail.com', text: 'Email', image: '/Message.svg' }
+          ]}
+        />
+      </div>
     </>
   );
 }
