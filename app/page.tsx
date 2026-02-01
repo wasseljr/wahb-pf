@@ -3,7 +3,7 @@ import PillNav from "@/components/PillNav";
 import ThemeToggle from "./theme-toggle";
 import TopHeader from "@/components/TopHeader";
 import PortfolioContent from "@/components/PortfolioContent";
-
+import FlowingMenu from "@/components/FlowingMenu";
 export default function Home() {
   return (
     <>
@@ -43,6 +43,15 @@ export default function Home() {
 
       {/* Main Content */}
       <PortfolioContent />
+      <FlowingMenu
+
+        items={[
+          { link: 'https://linkedin.com/in/yourprofile', text: 'LinkedIn', image: '/linkedin-icon.svg' },
+          { link: 'https://instagram.com/yourprofile', text: 'Instagram', image: '/instagram-icon.svg' },
+          { link: 'tel:+1234567890', text: 'Phone', image: '/phone-icon.svg' },
+          { link: 'mailto:your.email@example.com', text: 'Email', image: '/email-icon.svg' }
+        ]}
+      />
     </>
   );
 }
