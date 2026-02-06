@@ -1,5 +1,6 @@
 "use client";
 import { portfolioData } from "@/data/portfolio";
+import { Download } from "lucide-react";
 
 export default function SkillsSection() {
     const { skills, languages } = portfolioData;
@@ -70,7 +71,7 @@ export default function SkillsSection() {
                 <h3 className="text-lg font-semibold text-cyan-400 dark:text-cyan-400 mb-4">
                     Languages
                 </h3>
-                <div className="flex flex-wrap gap-52">
+                <div className="flex flex-wrap gap-4 lg:gap-52">
                     {languages.map((lang, i) => (
                         <div
                             key={i}
@@ -83,6 +84,18 @@ export default function SkillsSection() {
                         </div>
                     ))}
                 </div>
+            </div>
+
+            {/* Export CV Button */}
+            <div className="flex justify-center mt-8">
+                <a
+                    href="/download_files/CV_MENASRIA_Ouahb.docx"
+                    download
+                    className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                    <Download className="w-5 h-5" />
+                    Export CV
+                </a>
             </div>
         </div>
     );

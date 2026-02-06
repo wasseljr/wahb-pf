@@ -33,7 +33,7 @@ export const portfolioData = {
             location: "Sidi Bel Abbès",
             period: "May 2022 – June 2022",
             description: "Observational internship in digital marketing, including writing content for the website, monitoring Google Ads campaigns, and data analysis via Google Analytics and SEMrush. This experience allowed me to discover performance measurement and digital traffic monitoring.",
-            pdfLink: "" // User will add PDF link
+            pdfLink: "/download_files/Rapport HTA.pptx (1).pdf"
         },
         {
             title: "Marketing Intern",
@@ -41,7 +41,7 @@ export const portfolioData = {
             location: "Algeria",
             period: "May 2023 – June 2023",
             description: "As a marketing intern, I participated in implementing digital strategies and developing a new application for a product launch. I created content, designed web sheets, and analyzed social media performance, strengthening my skills in digital marketing and teamwork.",
-            pdfLink: "" // User will add PDF link
+            pdfLink: "/download_files/Rapport d'évolution du marketing des réseaux sociaux GSH.pdf"
         },
         {
             title: "Sales & Logistics Intern",
@@ -49,7 +49,7 @@ export const portfolioData = {
             location: "Algeria",
             period: "March 2024 – May 2024",
             description: "Internship in sales and logistics, focused on professional communication, customer satisfaction, and new client acquisition. I was also introduced to inventory management and internal logistics operations.",
-            pdfLink: "" // User will add PDF link
+            pdfLink: "/download_files/E-commerce_Experience_and_Logistics_Strategy.pdf.pdf"
         },
         {
             title: "Practical E-commerce Experience",
@@ -68,6 +68,7 @@ export const portfolioData = {
             "Communication and CRM"
         ],
         tools: [
+            "Data Analysis (Excel, SPSS, Stata)",
             "Google Analytics",
             "Google Ads",
             "Meta Ads",
@@ -76,7 +77,7 @@ export const portfolioData = {
             "Microsoft Office Suite (Word, Excel, PowerPoint)"
         ],
         soft: [
-            "Data Analysis (Excel, SPSS, Stata)",
+
             "Adaptability",
             "Fast Learning Ability",
             "Analytical Mindset",
