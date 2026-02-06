@@ -26,7 +26,7 @@ export default function TopHeader() {
         <>
             <div className={`overflow-hidden fixed left-4 lg:left-8 right-[140px] lg:right-[240px] top-4.5 lg:top-6 grid grid-cols-1 lg:grid-cols-8 gap-4 lg:gap-6 z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-md" : ""}`}>
                 {
-                    <div className="hidden lg:block lg:col-span-3">
+                    <div className="block lg:col-span-3">
                         <span className="block overflow-hidden">
                             <div
                                 className={`block font-medium text-[clamp(16px,1.2vw,20px)] ${isDark ? "text-white" : "text-gray-900"
@@ -48,7 +48,7 @@ export default function TopHeader() {
                     </div>
 
                 }
-                <div className="col-span-1 lg:col-span-3 text-center">
+                <div className="hidden lg:block lg:col-span-3 text-center">
                     <span className="block overflow-hidden">
                         <div
                             className={`block font-medium text-[clamp(16px,1.2vw,20px)] ${isDark ? "text-white" : "text-gray-900"

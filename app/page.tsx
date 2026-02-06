@@ -7,8 +7,9 @@ import FlowingMenu from "@/components/FlowingMenu";
 export default function Home() {
   return (
     <>
-      {/* Background Layer - Fixed */}
+
       <div className="fixed inset-0 -z-10">
+
         <Antigravity
           count={300}
           magnetRadius={6}
@@ -39,12 +40,12 @@ export default function Home() {
           { label: 'Contact', href: '#contact' }
         ]}
       />
-      <ThemeToggle />
 
-      {/* Main Content */}
+
+
       <PortfolioContent />
 
-      {/* Contact Section - FlowingMenu */}
+
       <div id="contact">
         <FlowingMenu
           items={[
@@ -54,6 +55,7 @@ export default function Home() {
             { link: 'mailto:menasriawahb@gmail.com', text: 'Email', image: '/Message.svg' }
           ]}
         />
+        <ThemeToggle />
       </div>
     </>
   );

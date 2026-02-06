@@ -78,11 +78,13 @@ export default function PortfolioContent() {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-20">
                     {/* Intro Paragraph */}
                     <div className="order-2 lg:order-1">
-                        <SplitText
-                            text={portfolioData.intro}
-                            className="text-lg lg:text-xl font-bold text-gray-800 dark:text-gray-300 leading-relaxed"
-                            delay={0.3}
-                        />
+                        <div className="p-6 rounded-2xl bg-white/5 dark:bg-white/5 border border-white/10 dark:border-white/10 backdrop-blur-sm">
+                            <SplitText
+                                text={portfolioData.intro}
+                                className="text-lg lg:text-xl font-bold text-gray-800 dark:text-gray-300 leading-relaxed font-saira"
+                                delay={0.3}
+                            />
+                        </div>
                     </div>
 
                     {/* Single Folder with 3 Papers */}
